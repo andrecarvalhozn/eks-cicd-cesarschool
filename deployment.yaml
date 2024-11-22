@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: cicd-demo
-    app.kubernetes.io/instance: cicd-demo-instance
+    app.kubernetes.io/name: cicd-deco
+    app.kubernetes.io/instance: cicd-deco-instance
     app.kubernetes.io/version: '1.0.0'
     app.kubernetes.io/managed-by: kubectl
-  name: cicd-demo-deployment
+  name: cicd-deco-deployment
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: cicd-demo
+      app: cicd-deco
   template:
     metadata:
       labels:
-        app: cicd-demo
+        app: cicd-deco
     spec:
       containers:
-        - image: 325583868777.dkr.ecr.ca-central-1.amazonaws.com/cicd-demo:latest
+        - image: 325583868777.dkr.ecr.ca-central-1.amazonaws.com/dp021-repository:latest
           imagePullPolicy: Always
-          name: cicd-demo
+          name: cicd-deco
           ports:
             - containerPort: 3000
